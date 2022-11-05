@@ -12,7 +12,7 @@ footer {
 
 li a {
     color: #ffffff !important;
-    font-weight: 800 !important;
+    font-weight: 600 !important;
     font-family: Calibri;
     font-size: 1.6vh;
 }
@@ -24,7 +24,7 @@ li a {
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a {
     color: #ffffff !important;
 }
-/*  */
+/* https://linuxhint.com/css-background-image-opacity/ this source helped me use an opacity on the background image without affecting the whole div */
 .title {
     position: relative;
     text-align: center;
@@ -61,5 +61,11 @@ li a {
 .center {
     display: block;
     margin: auto;
+}
+.footerText {
+    color: #ffffff !important;
+    font-weight: 400 !important;
+    font-family: Calibri;
+    font-size: 1.6vh;
     text-align: center;
 }
