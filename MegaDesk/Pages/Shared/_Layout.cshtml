@@ -7,27 +7,26 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MegaDesk.styles.css" asp-append-version="true" />
+    <link href="@Url.Content("~/css/main.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-page="/Quotes/Index">Mega Desk Quotes</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="headerText">
+            <h1 class="title">MegaDesk Quote Tool</h1>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-faded">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item text-center">
+                    <a class="nav-link" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" asp-page="/Quotes/Index">View Quotes</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" asp-page="/Quotes/Create">Create New Entry</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <div class="container">
@@ -37,8 +36,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - MegaDesk - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <div class="container center">
+            &copy; 2022 - MegaDesk
         </div>
     </footer>
 
