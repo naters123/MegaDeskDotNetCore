@@ -8,14 +8,17 @@ namespace MegaDesk.Models
         // get from user
         public int ID { get; set; }
         [Display(Name = "Customer Name")]
+        [RegularExpression(@"^[A-Z]+[a-zA-z\s]*$")]
         public string CustomerName { get; set; }
 
         [Display(Name = "Shipping Days")]
         public int DaysShip { get; set; }
-
+        [Range(24, 96)]
         public int Width { get; set; }
+        [Range(12, 48)]
         public int Depth { get; set; }
         [Display(Name = "Drawers")]
+        [Range(0, 9)]
         public int DrawersNumber { get; set; }
         [Display(Name = "Surface Material")]
         public string surfaceMaterial { get; set; }

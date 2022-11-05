@@ -5,6 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
+
 <h1>Create</h1>
 
 <h4>DeskQuote</h4>
@@ -18,10 +19,27 @@
                 <input asp-for="DeskQuote.CustomerName" class="form-control" />
                 <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.DaysShip" class="control-label"></label>
-                <input asp-for="DeskQuote.DaysShip" class="form-control" />
+            <div class="form-group" id="ship-days">
+                <p>Shipping Days</p>
+                <select asp-for="DeskQuote.DaysShip">
+                    <option value=14 > 14 </option>
+                    <option value=7 > 7 </option>
+                    <option value=5 > 5 </option>
+                    <option value=3 > 3 </option>
+                </select>
+                <!--</select>
+                <input asp-for="DeskQuote.DaysShip" type="radio" value=14 checked="checked"/>
+                <label asp-for="DeskQuote.DaysShip" class="control-label">14</label>
                 <span asp-validation-for="DeskQuote.DaysShip" class="text-danger"></span>
+                <input asp-for="DeskQuote.DaysShip" type="radio" value=7 />
+                <label asp-for="DeskQuote.DaysShip" class="control-lab">7</label>
+                <span asp-validation-for="DeskQuote.DaysShip" class="text-danger"></span>
+                <input asp-for="DeskQuote.DaysShip" type="radio" value=5 />
+                <label asp-for="DeskQuote.DaysShip" class="control-label">5</label>
+                <span asp-validation-for="DeskQuote.DaysShip" class="text-danger"></span>
+                <input asp-for="DeskQuote.DaysShip" type="radio" value=3 />
+                <label asp-for="DeskQuote.DaysShip" class="control-label">3</label>
+                    <span asp-validation-for="DeskQuote.DaysShip" class="text-danger"></span>-->
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Width" class="control-label"></label>
