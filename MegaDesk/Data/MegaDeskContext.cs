@@ -15,5 +15,11 @@ namespace MegaDesk.Data
         }
 
         public DbSet<MegaDesk.Models.DeskQuote> DeskQuote { get; set; } = default!;
+
+        public DbSet<MegaDesk.Models.DesktopMaterial> DesktopMaterial { get; set; }
+
+        public DbSet<MegaDesk.Models.ShippingDaysOrder> ShippingDaysOrder { get; set; }
+
+        public DbSet<MegaDesk.Models.FileUpload> FileUpload { get; set; }
     }
 }

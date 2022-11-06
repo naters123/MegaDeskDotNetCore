@@ -8,16 +8,28 @@ namespace MegaDesk.Models
         // get from user
         public int ID { get; set; }
         [Display(Name = "Customer Name")]
+        [Required]
         public string CustomerName { get; set; }
 
         [Display(Name = "Shipping Days")]
+        [Required]
         public int DaysShip { get; set; }
 
+        [Range(24, 96)]
+        [Required]
         public int Width { get; set; }
+
+        [Range(12, 48)]
+        [Required]
         public int Depth { get; set; }
         [Display(Name = "Drawers")]
+
+        [Range(0, 7)]
+        [Required]
         public int DrawersNumber { get; set; }
         [Display(Name = "Surface Material")]
+
+        [Required]
         public string surfaceMaterial { get; set; }
         [Display(Name = "Date")]
         [DataType(DataType.Date)]
@@ -57,6 +69,11 @@ namespace MegaDesk.Models
             this.surfaceMaterial = surfaceMaterial;
             this.quoteDate = quoteDate;
             CalcTotalPrice();
+        }
+
+        public DeskQuote()
+        {
+            
         }
         public DeskQuote(int iD, string customerName, int daysShip, int width, int depth, int drawersNumber, string surfaceMaterial, DateTime quoteDate, Dictionary<string, int> surfaceMaterials, int[,] rushPrice, int shipPrice, int surfaceMaterialPrice, int surfaceAreaPrice, int drawerCost, int finalPrice, int surfaceArea)
         {

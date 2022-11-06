@@ -16,3 +16,41 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#js-showSurfaceMaterial {
+    width: 10em;
+    margin: 2em;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.form-control{
+    max-width: 100%;
+}
+
+.form-group {
+    min-width: 15em;
+    margin: 2em;
+}
+
+.btn{
+    width: 6em;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin: 0.5em;
+    }
+}
