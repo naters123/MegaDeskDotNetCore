@@ -46,22 +46,23 @@ namespace MegaDesk.Pages.Quotes
             RushOrders = new SelectList(await rushOrders.Distinct().ToListAsync());
 
             return Page();
+
         }
 
-        
-        
+
+
 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
-
-          DeskQuote.quoteDate = DateTime.Now;
-
+            Console.WriteLine(DeskQuote.ToString());
+            DeskQuote.quoteDate = DateTime.Now;
+            DeskQuote.FinalPrice = DeskQuote.CalcTotalPrice();
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 

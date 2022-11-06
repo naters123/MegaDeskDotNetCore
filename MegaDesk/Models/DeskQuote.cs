@@ -56,10 +56,10 @@ namespace MegaDesk.Models
         public int SurfaceMaterialPrice;
         public int SurfaceAreaPrice;
         public int DrawerCost;
-        public int FinalPrice;
+        public int FinalPrice { get; set; }
         public int SurfaceArea;
 
-        public DeskQuote(string customerName, int daysShip, int width, int depth, int drawersNumber, string surfaceMaterial, DateTime quoteDate)
+        public DeskQuote(string customerName, int daysShip, int width, int depth, int drawersNumber, string surfaceMaterial, DateTime quoteDate, int finalPrice)
         {
             CustomerName = customerName;
             DaysShip = daysShip;
@@ -68,7 +68,7 @@ namespace MegaDesk.Models
             DrawersNumber = drawersNumber;
             this.surfaceMaterial = surfaceMaterial;
             this.quoteDate = quoteDate;
-            CalcTotalPrice();
+            FinalPrice = CalcTotalPrice();
         }
 
         public DeskQuote()
@@ -180,7 +180,7 @@ namespace MegaDesk.Models
         }
 
         // Calc total Price
-        public void CalcTotalPrice()
+        public int CalcTotalPrice()
         {
             // run to get surface area
             CalcSurfaceArea();
@@ -192,7 +192,7 @@ namespace MegaDesk.Models
             CalcSquarePrice();
 
             // calc total or final cost
-            FinalPrice = BasePrice + ShipPrice + SurfaceMaterialPrice + DrawerCost + SurfaceAreaPrice;
+            return BasePrice + ShipPrice + SurfaceMaterialPrice + DrawerCost + SurfaceAreaPrice;
         }
 
         public override string ToString()
