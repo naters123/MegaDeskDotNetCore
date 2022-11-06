@@ -36,11 +36,11 @@ body {
 
 .form-group {
     min-width: 15em;
-    margin: 2em;
+    margin: 1em 1em 1em 0;
 }
 
 .btn{
-    width: 6em;
+    width: 7em;
 }
 
 
@@ -51,6 +51,6 @@ body {
     }
 
     .form-group {
-        margin: 0.5em;
+        margin: 0.5em 0.5em 0.5em 0;
     }
 }
